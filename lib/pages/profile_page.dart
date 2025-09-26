@@ -13,7 +13,7 @@ class ProfilePage extends StatelessWidget {
           children: [
             const CircleAvatar(radius: 40, backgroundImage: NetworkImage("https://via.placeholder.com/150")),
             const SizedBox(height: 16),
-            const Text("Amanda", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            const Text("User", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             const SizedBox(height: 32),
             ListTile(
               leading: const Icon(Icons.favorite),

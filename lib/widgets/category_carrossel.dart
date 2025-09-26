@@ -5,42 +5,40 @@ class CategoryCarrossel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final categories = ["Rosto", "Cabelo", "Pele", "Corpo"];
+    final List<String> categories = ["Pele", "Rosto", "Cabelo", "Corpo"];
 
     return SizedBox(
-      height: 120,
+      height: 100,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, '/products', arguments: categories[index],);
+              Navigator.pushNamed(
+                context,
+                '/products',
+                arguments: categories[index],
+              );
             },
             child: Container(
-              width: 100,
               margin: const EdgeInsets.symmetric(horizontal: 8),
+              padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                color: Colors.brown[100],
-                image: DecorationImage(
-                  image: NetworkImage("https://via.placeholder.com/100"),
-                  fit: BoxFit.cover,
-                ),
+                color: Colors.pink[100],
+                borderRadius: BorderRadius.circular(12),
               ),
               child: Center(
                 child: Text(
                   categories[index],
                   style: const TextStyle(
-                    color: Colors.white,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    backgroundColor: Colors.black45,
                   ),
                 ),
               ),
             ),
           );
-        
         },
       ),
     );
