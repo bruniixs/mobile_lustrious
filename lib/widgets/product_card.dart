@@ -10,36 +10,22 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/product-detail');
+        Navigator.pushNamed(
+          context,
+          '/product-detail',
+          arguments: product,
+        );
       },
       child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              child: ClipRRect(
-                borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
-                child: Image.network(product.image, fit: BoxFit.cover, width: double.infinity),
-              ),
-            ),
+            Expanded(child: Image.network(product.image, fit: BoxFit.cover)),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(product.name, style: const TextStyle(fontWeight: FontWeight.bold)),
+              child: Text(product.name,
+                  maxLines: 1, overflow: TextOverflow.ellipsis),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: Text("R\$ ${product.price.toStringAsFixed(2)}"),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/cart');
-                },
-                child: const Text("Adicionar ao carrinho"),
-              ),
-            ),
+            Text("R\$ ${product.price.toStringAsFixed(2)}"),
           ],
         ),
       ),

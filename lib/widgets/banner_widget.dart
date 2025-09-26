@@ -18,7 +18,7 @@ class BannerWidget extends StatelessWidget {
       ),
       child: const Center(
         child: Text(
-          "Lustrous Collection",
+          "Lustrious Collection",
           style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
