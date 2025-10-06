@@ -12,7 +12,7 @@ class ProductCard extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(
           context,
-          '/product-detail',
+          '/product-details',
           arguments: product,
         );
       },
